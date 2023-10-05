@@ -1,0 +1,9 @@
+#!/bin/sh
+# symlinks 'CA*.sh' files in $SRC to /usr/bin
+# make sure original scripts are executable (chmod +x <file.sh>)
+SRC=/root
+DEST=/usr/bin
+for script in "$SRC"/CA*.sh; do
+  base=${script##*/}; # prune path to sh
+  ln -srf "$f" "$DEST/${base%*.sh}" # e.g. /usr/bin/CA-name-of-script -> $SRC/CA-name-of-script.sh
+done
