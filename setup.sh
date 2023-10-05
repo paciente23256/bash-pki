@@ -1,7 +1,8 @@
 #!/bin/bash
 # Openssl PKI Framework (C) 2020 version 1.2
 # CA and SUb CA - EC prime256v1
-# Full Setup sh - Debian
+# Full Setup sh - Debian. If your CA box is 
+# CentOS or RHat just change package cmd to dnf or yum.
 # Usar:chmod +x setup_pki.sh - sudo bash setup_pki.sh
 #
 
