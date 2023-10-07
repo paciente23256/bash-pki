@@ -89,7 +89,7 @@ stateOrProvinceName_default     = Lisbon
 localityName_default            = Sede
 0.organizationName_default      = Best Organization
 organizationalUnitName_default  = IT
-emailAddress_default            = pki@yourdomain.pt
+emailAddress_default            = pki@ydns.priv
 
 [ v3_ca ]
 # Extensions for a typical CA (`man x509v3_config`).
@@ -111,6 +111,7 @@ authorityInfoAccess = @ocsp_info
 # Extensions for client certificates (`man x509v3_config`).
 basicConstraints = CA:FALSE
 nsCertType = client, email
+# deve mudar de acordo.
 nsComment = "Best Organization - Servidor de Certificados"
 subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer
@@ -123,6 +124,7 @@ crlDistributionPoints = @crl_info
 # Extensions for server certificates (`man x509v3_config`).
 basicConstraints = CA:FALSE
 nsCertType = server
+# Deve mudar de acordo.
 nsComment = "Best Organization - Servidor de Certificados"
 subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer:always
@@ -148,10 +150,11 @@ extendedKeyUsage = critical, OCSPSigning
 crlDistributionPoints = @crl_info
 authorityInfoAccess = @ocsp_info
 
-
+# Deve mudar os URLs de acordo com o seu ambiente de producao.
+# Deverá ter um servidor web e de dns que resolva os nomes dos url de validacao dos certificados.
 [crl_info]
-URI.0 = http://crl.yourdomain.pt/rootCA.crl
+URI.0 = http://crl.dns.priv/rootCA.crl
 
 [ocsp_info]
-caIssuers;URI.0 = http://ocsp.yourdomain.pt/rootCA.crt
-OCSP;URI.0 = http://ocsp.yourdomain.pt
+caIssuers;URI.0 = http://ocsp.dns.priv/rootCA.crt
+OCSP;URI.0 = http://ocsp.dns.priv
