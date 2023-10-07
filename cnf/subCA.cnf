@@ -89,7 +89,7 @@ stateOrProvinceName_default     = Lisboa
 localityName_default            = 127.0.0.1
 0.organizationName_default      = Mafia Russa Lda
 organizationalUnitName_default  = Unita
-emailAddress_default            = pki@unita.priv
+emailAddress_default            = pki@dns.priv
 
 [ v3_ca ]
 # Extensions for a typical CA (`man x509v3_config`).
@@ -147,7 +147,8 @@ extendedKeyUsage = critical, OCSPSigning
 crlDistributionPoints = @crl_info
 authorityInfoAccess = @ocsp_info
 
-
+# Deve mudar os URLs de acordo com o seu ambiente de producao.
+# Deverá ter um servidor web e de dns que resolva os nomes dos url de validacao dos certificados.
 [crl_info]
 URI.0 = http://crl.dns.priv/subCA.crl
 
