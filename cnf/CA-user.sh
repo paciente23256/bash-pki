@@ -21,7 +21,7 @@ if [ -z $user_cert ]
 then
     echo '--!'
         echo '--> DEVE APRESENTAR UM UTILIZADOR VALIDO.'
-    echo '--> POR ex. ./ssl_server_cert.sh [player@bestorg.priv]'
+    echo '--> POR ex. ./ssl_server_cert.sh [player@bdns.priv]'
 
     exit 1
 
